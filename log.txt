@@ -1,0 +1,326 @@
+2020-11-12 13:26:23,597 - __main__ - INFO - Starting Bot !
+2020-11-12 13:27:13,167 - root - INFO - Started 8 HandlerTasks
+2020-11-12 13:27:46,745 - bot - INFO - AuthURL:700355752
+2020-11-12 13:30:51,923 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 13:30:52,116 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 13:30:52,142 - __main__ - INFO - Bot Stopped !
+2020-11-12 13:31:07,193 - __main__ - INFO - Starting Bot !
+2020-11-12 13:31:24,130 - root - INFO - Started 8 HandlerTasks
+2020-11-12 13:31:25,012 - bot - INFO - AuthURL:700355752
+2020-11-12 13:31:49,472 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 13:31:53,108 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 13:31:57,453 - pyrogram.dispatcher - ERROR - (psycopg2.OperationalError) could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "ec2-52-44-235-121.compute-1.amazonaws.com" (52.44.235.121) and accepting
+	TCP/IP connections on port 5432?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\default.py", line 493, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "ec2-52-44-235-121.compute-1.amazonaws.com" (52.44.235.121) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\dispatcher.py", line 194, in handler_worker
+    if await handler.check(self.client, parsed_update):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\handlers\handler.py", line 35, in check
+    return await self.filters(client, update)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\filters.py", line 78, in __call__
+    y = await self.other(client, update)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\filters.py", line 49, in __call__
+    x = await client.loop.run_in_executor(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\helpers\utils.py", line 7, in <lambda>
+    auth_users = filters.create(lambda _, __, message: bool(gDriveDB.search(message.from_user.id)))
+  File "C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\helpers\sql_helper\gDriveDB.py", line 35, in search
+    saved_cred = SESSION.query(gDriveCreds).get(chat_id)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 1018, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 1135, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\loading.py", line 286, in load_on_pk_identity
+    return q.one()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 3490, in one
+    ret = self.one_or_none()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 3459, in one_or_none
+    ret = list(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 3556, in _execute_and_instances
+    conn = self._get_bind_args(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 3571, in _get_bind_args
+    return fn(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\session.py", line 1138, in connection
+    return self._connection_for_bind(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\session.py", line 1146, in _connection_for_bind
+    return self.transaction._connection_for_bind(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\orm\session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\pool\base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\sqlalchemy\engine\default.py", line 493, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "ec2-52-44-235-121.compute-1.amazonaws.com" (52.44.235.121) and accepting
+	TCP/IP connections on port 5432?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-11-12 13:31:58,003 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 13:31:58,005 - __main__ - INFO - Bot Stopped !
+2020-11-12 13:57:25,555 - __main__ - INFO - Starting Bot !
+2020-11-12 13:57:26,978 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:27,981 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:28,983 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:29,986 - pyrogram.connection.connection - WARNING - Connection failed! Trying again...
+2020-11-12 13:57:29,999 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:31,010 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:32,024 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:33,026 - pyrogram.connection.connection - WARNING - Connection failed! Trying again...
+2020-11-12 13:57:33,030 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:34,043 - pyrogram.connection.connection - WARNING - [WinError 10065] A socket operation was attempted to an unreachable host
+2020-11-12 13:57:46,554 - __main__ - INFO - Starting Bot !
+2020-11-12 13:58:03,744 - root - INFO - Started 8 HandlerTasks
+2020-11-12 13:58:11,217 - bot - INFO - check1
+2020-11-12 13:58:12,540 - bot - INFO - check3
+2020-11-12 13:58:12,542 - bot - INFO - check4
+2020-11-12 13:58:12,543 - bot - INFO - AuthURL:700355752
+2020-11-12 13:58:24,902 - bot - INFO - check7
+2020-11-12 13:58:38,013 - bot - INFO - check7
+2020-11-12 13:58:50,126 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 13:58:50,670 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 13:58:50,673 - __main__ - INFO - Bot Stopped !
+2020-11-12 14:03:01,132 - __main__ - INFO - Starting Bot !
+2020-11-12 14:03:17,637 - root - INFO - Started 8 HandlerTasks
+2020-11-12 14:03:20,155 - bot - INFO - check1
+2020-11-12 14:03:20,796 - bot - INFO - check3
+2020-11-12 14:03:20,797 - bot - INFO - check4
+2020-11-12 14:03:20,799 - bot - INFO - AuthURL:700355752
+2020-11-12 14:03:50,934 - bot - INFO - check7
+2020-11-12 14:04:23,449 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:04:24,176 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 14:04:24,179 - __main__ - INFO - Bot Stopped !
+2020-11-12 14:07:45,837 - __main__ - INFO - Starting Bot !
+2020-11-12 14:08:02,460 - root - INFO - Started 8 HandlerTasks
+2020-11-12 14:08:11,645 - bot - INFO - check1
+2020-11-12 14:08:12,253 - bot - INFO - check3
+2020-11-12 14:08:12,254 - bot - INFO - check4
+2020-11-12 14:08:12,255 - bot - INFO - AuthURL:700355752
+2020-11-12 14:08:25,809 - bot - INFO - check7
+2020-11-12 14:08:25,810 - bot - INFO - AuthURL:4/1AY0e-g4156vBbepWPnfzJ0P4lHW-pykHzbMibP_7mDYJFFlQkmreakt4m3E
+2020-11-12 14:08:25,810 - bot - INFO - AuthURL:62
+2020-11-12 14:08:25,811 - bot - INFO - AuthURL:/
+2020-11-12 14:08:25,813 - bot - INFO - check7A
+2020-11-12 14:09:13,979 - pyrogram.connection.connection - WARNING - timed out
+2020-11-12 14:10:09,810 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:10:10,204 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 14:10:10,209 - __main__ - INFO - Bot Stopped !
+2020-11-12 14:10:15,628 - __main__ - INFO - Starting Bot !
+2020-11-12 14:10:50,535 - __main__ - INFO - Starting Bot !
+2020-11-12 14:11:01,903 - pyrogram.connection.connection - WARNING - timed out
+2020-11-12 14:11:25,468 - __main__ - INFO - Starting Bot !
+2020-11-12 14:11:38,287 - root - INFO - Started 8 HandlerTasks
+2020-11-12 14:11:41,583 - bot - INFO - check1
+2020-11-12 14:11:42,419 - bot - INFO - check3
+2020-11-12 14:11:42,420 - bot - INFO - check4
+2020-11-12 14:11:42,421 - bot - INFO - AuthURL:700355752
+2020-11-12 14:11:48,795 - bot - INFO - check7
+2020-11-12 14:11:48,795 - bot - INFO - AuthURL:4/1AY0e-g4156vBbepWPnfzJ0P4lHW-pykHzbMibP_7mDYJFFlQkmreakt4m3E
+2020-11-12 14:11:48,796 - bot - INFO - AuthURL:62
+2020-11-12 14:11:48,797 - bot - INFO - AuthURL:/
+2020-11-12 14:11:48,798 - bot - INFO - check7A
+2020-11-12 14:11:48,798 - bot - INFO - check8
+2020-11-12 14:11:48,799 - bot - INFO - check9
+2020-11-12 14:12:01,596 - pyrogram.dispatcher - ERROR - [400 MESSAGE_NOT_MODIFIED]: The message was not modified because you tried to edit it using the same content (caused by "raw.functions.messages.EditMessage")
+Traceback (most recent call last):
+  File "C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\plugins\authorize.py", line 87, in _token
+    creds = flow.step2_exchange(message.text)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\oauth2client\_helpers.py", line 133, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\oauth2client\client.py", line 2089, in step2_exchange
+    raise FlowExchangeError(error_msg)
+oauth2client.client.FlowExchangeError: invalid_grantBad Request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 442, in send
+    return await self._send(data, timeout=timeout)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 407, in _send
+    raise TimeoutError
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\dispatcher.py", line 208, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\plugins\authorize.py", line 93, in _token
+    await sent_message.edit(Messages.INVALID_AUTH_CODE)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\types\messages_and_media\message.py", line 2515, in edit_text
+    return await self._client.edit_message_text(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\methods\messages\edit_message_text.py", line 78, in edit_message_text
+    r = await self.send(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\methods\advanced\send.py", line 68, in send
+    r = await self.session.send(data, retries, timeout, self.sleep_threshold)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 461, in send
+    return await self.send(data, retries - 1, timeout)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 442, in send
+    return await self._send(data, timeout=timeout)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 412, in _send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\errors\rpc_error.py", line 78, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.MessageNotModified: [400 MESSAGE_NOT_MODIFIED]: The message was not modified because you tried to edit it using the same content (caused by "raw.functions.messages.EditMessage")
+2020-11-12 14:12:06,444 - bot - INFO - check1
+2020-11-12 14:12:06,724 - bot - INFO - check3
+2020-11-12 14:12:06,726 - bot - INFO - check4
+2020-11-12 14:12:06,726 - bot - INFO - AuthURL:700355752
+2020-11-12 14:12:37,114 - bot - INFO - check7
+2020-11-12 14:12:37,115 - bot - INFO - AuthURL:4/1AY0e-g7eblRD8VDsjS8GivmuAhQFo5r9putDceZma74r1SWZ1pa7bxSsOjU
+2020-11-12 14:12:37,116 - bot - INFO - AuthURL:62
+2020-11-12 14:12:37,116 - bot - INFO - AuthURL:/
+2020-11-12 14:12:37,117 - bot - INFO - check7A
+2020-11-12 14:12:37,118 - bot - INFO - check8
+2020-11-12 14:12:37,119 - bot - INFO - check9
+2020-11-12 14:12:49,523 - bot - INFO - AuthSuccess: 700355752
+2020-11-12 14:13:11,748 - bot - INFO - Download:700355752: AgADBQADuqsxG8B0YFX5hDVP2th5-zyrxWx0AAMBAAMCAAN5AAMpxgMAARYE
+2020-11-12 14:13:56,851 - bot - INFO - Upload: C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\downloads\IMG-700355752-1254.png
+2020-11-12 14:14:41,332 - bot - INFO - Deleteing: C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\downloads\IMG-700355752-1254.png
+2020-11-12 14:18:17,033 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:18:17,250 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:18:17,496 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:18:17,768 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:18:17,974 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 14:18:17,980 - __main__ - INFO - Bot Stopped !
+2020-11-12 14:18:37,918 - __main__ - INFO - Starting Bot !
+2020-11-12 14:18:51,885 - root - INFO - Started 8 HandlerTasks
+2020-11-12 14:19:03,716 - bot - INFO - Revoke:700355752
+2020-11-12 14:19:26,846 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:19:27,116 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 14:19:27,119 - __main__ - INFO - Bot Stopped !
+2020-11-12 14:19:33,139 - __main__ - INFO - Starting Bot !
+2020-11-12 14:19:49,304 - root - INFO - Started 8 HandlerTasks
+2020-11-12 14:20:12,025 - bot - INFO - AuthURL:700355752
+2020-11-12 14:20:19,236 - bot - INFO - AuthURL:700355752
+2020-11-12 14:20:36,284 - pyrogram.dispatcher - ERROR - [400 MESSAGE_NOT_MODIFIED]: The message was not modified because you tried to edit it using the same content (caused by "raw.functions.messages.EditMessage")
+Traceback (most recent call last):
+  File "C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\plugins\authorize.py", line 74, in _token
+    creds = flow.step2_exchange(message.text)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\oauth2client\_helpers.py", line 133, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\oauth2client\client.py", line 2089, in step2_exchange
+    raise FlowExchangeError(error_msg)
+oauth2client.client.FlowExchangeError: invalid_grantBad Request
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 442, in send
+    return await self._send(data, timeout=timeout)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 407, in _send
+    raise TimeoutError
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\dispatcher.py", line 208, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\Pratik\Desktop\google-drive-telegram-bot\bot\plugins\authorize.py", line 80, in _token
+    await sent_message.edit(Messages.INVALID_AUTH_CODE)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\types\messages_and_media\message.py", line 2515, in edit_text
+    return await self._client.edit_message_text(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\methods\messages\edit_message_text.py", line 78, in edit_message_text
+    r = await self.send(
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\methods\advanced\send.py", line 68, in send
+    r = await self.session.send(data, retries, timeout, self.sleep_threshold)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 461, in send
+    return await self.send(data, retries - 1, timeout)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 442, in send
+    return await self._send(data, timeout=timeout)
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\session\session.py", line 412, in _send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\Pratik\AppData\Local\Programs\Python\Python38\lib\site-packages\pyrogram\errors\rpc_error.py", line 78, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.MessageNotModified: [400 MESSAGE_NOT_MODIFIED]: The message was not modified because you tried to edit it using the same content (caused by "raw.functions.messages.EditMessage")
+2020-11-12 14:20:55,056 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:20:55,343 - root - INFO - Stop signal received (2). Exiting...
+2020-11-12 14:20:55,345 - root - INFO - Stopped 8 HandlerTasks
+2020-11-12 14:20:55,348 - __main__ - INFO - Bot Stopped !
