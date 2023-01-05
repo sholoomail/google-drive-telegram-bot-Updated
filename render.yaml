@@ -5,7 +5,7 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python -m bot
-    repo: https://github.com/sholoomail/google-drive-telegram-bot-Updated/new/main.git
+    repo: https://github.com/sholoomail/google-drive-telegram-bot-Updated.git
     branch: main
     envVars:
       - key: BOT_TOKEN 
