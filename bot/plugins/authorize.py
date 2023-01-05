@@ -16,8 +16,8 @@ from bot.helpers.utils import CustomFilters
 OAUTH_SCOPE = "https://www.googleapis.com/auth/drive"
 REDIRECT_URI = "https://api.ideta.io/api/receive-message/-NL1uESNVoWQxB3Qo8vs"
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
-G_DRIVE_CLIENT_ID = "202264815644.apps.googleusercontent.com"
-G_DRIVE_CLIENT_SECRET = "X4Z3ca8xfWDb1Voo-F9a7ZxJ"
+G_DRIVE_CLIENT_ID = "306651420472-lq6cd70ua3p836v89ic018t98a91aec6.apps.googleusercontent.com"
+G_DRIVE_CLIENT_SECRET = "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"
 flow = None
 
 @Client.on_message(filters.private & filters.incoming & filters.command(BotCommands.Authorize))
