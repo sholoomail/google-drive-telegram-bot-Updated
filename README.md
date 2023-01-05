@@ -57,6 +57,12 @@ pip3 install -r requirements.txt
 ```sh 
 python3 -m bot
 ```
+### Deploy To Render (Paid)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?)
+
+
+
 
 ## Credits
 - [Dan](https://github.com/delivrance) for creating [PyroGram](https://pyrogram.org)
