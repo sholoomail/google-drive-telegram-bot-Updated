@@ -1,7 +1,7 @@
 services:
   # A background worker that consumes a queue
   - type: worker
-    name: sholoogoogledriveuploader
+    name: google-drive-telegram-bot-Updated
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python -m bot
