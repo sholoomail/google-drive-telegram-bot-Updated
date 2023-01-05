@@ -1,0 +1,30 @@
+services:
+  # A background worker that consumes a queue
+  - type: worker
+    name: sholoogoogledriveuploader
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m bot
+    repo: https://github.com/sholoomail/google-drive-telegram-bot-Updated/new/main.git
+    branch: main
+    envVars:
+      - key: BOT_TOKEN 
+        sync: false
+      - key: APP_ID 
+        sync: false
+      - key: API_HASH 
+        sync: false
+      - key: SUPPORT_CHAT_LINK 
+        value: https://khatmesalawat.ir/100269/
+      - key: DOWNLOAD_DIRECTORY 
+        value: ./DOWNLOADS/
+      - key: SUDO_USERS 
+        sync: false
+      - key: DATABASE_URL 
+        sync: false
+      - key: G_DRIVE_CLIENT_ID 
+        sync: false
+      - key: G_DRIVE_CLIENT_SECRET 
+        sync: false
+      - key: ENV 
+        value: ANYTHING
